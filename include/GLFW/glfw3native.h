@@ -415,6 +415,21 @@ GLFWAPI GLXContext glfwGetGLXContext(GLFWwindow* window);
  *  @ingroup native
  */
 GLFWAPI GLXWindow glfwGetGLXWindow(GLFWwindow* window);
+
+/*! @brief Returns the `GLXFBConfig` that was chosen to create the 
+ *  specified window.
+ *
+ *  @return The `GLXFBConfig` that was chosen to create the specified 
+ *  window, or `NULL` if an [error](@ref error_handling) occurred.
+ *
+ *  @thread_safety This function may be called from any thread.  Access is not
+ *  synchronized.
+ *
+ *  @since Added in version 3.4
+ *
+ *  @ingroup native
+ */
+GLFWAPI GLXFBConfig glfwGetGLXFBConfig(GLFWwindow* window);
 #endif
 
 #if defined(GLFW_EXPOSE_NATIVE_WAYLAND)
@@ -517,6 +532,23 @@ GLFWAPI EGLContext glfwGetEGLContext(GLFWwindow* window);
  *  @ingroup native
  */
 GLFWAPI EGLSurface glfwGetEGLSurface(GLFWwindow* window);
+
+/*! @brief Returns the `EGLConfig` of the specified window.
+ *
+ *  @return The `EGLConfig` of the specified window, or `EGL_NO_SURFACE` if an
+ *  [error](@ref error_handling) occurred.
+ *
+ *  @errors Possible errors include @ref GLFW_NO_WINDOW_CONTEXT and @ref
+ *  GLFW_NOT_INITIALIZED.
+ *
+ *  @thread_safety This function may be called from any thread.  Access is not
+ *  synchronized.
+ *
+ *  @since Added in version 3.0.
+ *
+ *  @ingroup native
+ */
+GLFWAPI EGLConfig glfwGetEGLConfig(GLFWwindow* window);
 #endif
 
 #if defined(GLFW_EXPOSE_NATIVE_OSMESA)

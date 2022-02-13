@@ -469,6 +469,7 @@ typedef struct _GLFWcontextGLX
 {
     GLXContext      handle;
     GLXWindow       window;
+    GLXFBConfig     fbConfig;
 } _GLFWcontextGLX;
 
 // GLX-specific global data
