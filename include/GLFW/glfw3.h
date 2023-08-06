@@ -1099,10 +1099,10 @@ extern "C" {
 /*! @brief macOS specific
  *  [window hint](@ref GLFW_COCOA_RETINA_FRAMEBUFFER_hint).
  */
-#define GLFW_DARK_THEME             0x0002200D
+#define GLFW_LIGHT_THEME             0x0002200D
 /*! @brief windows specific
  *
- *  Allows specifying whether dark theme should be used.
+ *  Allows specifying whether light theme should be used.
  */
 #define GLFW_COCOA_RETINA_FRAMEBUFFER 0x00023001
 /*! @brief macOS specific

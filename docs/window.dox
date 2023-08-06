@@ -249,8 +249,8 @@ This hint only has an effect on platforms where screen coordinates and pixels
 always map 1:1 such as Windows and X11.  On platforms like macOS the resolution
 of the framebuffer is changed independently of the window size.
 
-@anchor GLFW_DARK_THEME
-__GLFW_DARK_THEME__ specifies whether the window should use dark theme or not.
+@anchor GLFW_LIGHT_THEME
+__GLFW_LIGHT_THEME__ specifies whether the window should use light theme or not.
 Possible values are `GLFW_TRUE` and `GLFW_FALSE`. This hint only has effect
 on windows operating system.
 

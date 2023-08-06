@@ -408,7 +408,7 @@ struct _GLFWwndconfig
     GLFWbool      focusOnShow;
     GLFWbool      mousePassthrough;
     GLFWbool      scaleToMonitor;
-    GLFWbool      darkTheme;
+    GLFWbool      lightTheme;
     struct {
         GLFWbool  retina;
         char      frameName[256];
