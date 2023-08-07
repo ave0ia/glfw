@@ -388,8 +388,8 @@ GLFWAPI void glfwWindowHint(int hint, int value)
         case GLFW_SCALE_TO_MONITOR:
             _glfw.hints.window.scaleToMonitor = value ? GLFW_TRUE : GLFW_FALSE;
             return;
-        case GLFW_LIGHT_THEME:
-            _glfw.hints.window.lightTheme = value ? GLFW_TRUE : GLFW_FALSE;
+        case GLFW_THEME:
+            _glfw.hints.window.theme = value;
             return;
         case GLFW_CENTER_CURSOR:
             _glfw.hints.window.centerCursor = value ? GLFW_TRUE : GLFW_FALSE;

@@ -249,9 +249,9 @@ This hint only has an effect on platforms where screen coordinates and pixels
 always map 1:1 such as Windows and X11.  On platforms like macOS the resolution
 of the framebuffer is changed independently of the window size.
 
-@anchor GLFW_LIGHT_THEME
-__GLFW_LIGHT_THEME__ specifies whether the window should use light theme or not.
-Possible values are `GLFW_TRUE` and `GLFW_FALSE`. This hint only has effect
+@anchor GLFW_THEME
+__GLFW_THEME__ specifies whether the window should use light theme or not.
+Possible values are `GLFW_THEME_AUTO`, `GLFW_THEME_DARK`, and `GLFW_THEME_LIGHT`. This hint only has effect
 on windows operating system.
 
 @anchor GLFW_MOUSE_PASSTHROUGH_hint
