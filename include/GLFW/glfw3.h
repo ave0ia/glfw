@@ -3388,6 +3388,8 @@ GLFWAPI void glfwGetWindowPos(GLFWwindow* window, int* xpos, int* ypos);
  */
 GLFWAPI void glfwSetWindowPos(GLFWwindow* window, int xpos, int ypos);
 
+GLFWAPI int glfwIsWindowLightTheme(GLFWwindow* window);
+
 /*! @brief Retrieves the size of the content area of the specified window.
  *
  *  This function retrieves the size, in screen coordinates, of the content area

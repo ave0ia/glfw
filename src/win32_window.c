@@ -1372,6 +1372,7 @@ static int createNativeWindow(_GLFWwindow* window,
         should_use_light_mode = wndconfig->theme == GLFW_THEME_LIGHT;
 
     _glfwSetWindowTheme(!should_use_light_mode, window->win32.handle);
+    window->isLightTheme = should_use_light_mode ? GLFW_TRUE : GLFW_FALSE;
 
     _glfw_free(wideTitle);
 

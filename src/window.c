@@ -588,6 +588,15 @@ GLFWAPI void glfwSetWindowPos(GLFWwindow* handle, int xpos, int ypos)
     _glfw.platform.setWindowPos(window, xpos, ypos);
 }
 
+GLFWAPI int glfwIsWindowLightTheme(GLFWwindow* handle)
+{
+    _GLFWwindow* window = (_GLFWwindow*)handle;
+    assert(window != NULL);
+
+    _GLFW_REQUIRE_INIT_OR_RETURN(0);
+    return window->isLightTheme;
+}
+
 GLFWAPI void glfwGetWindowSize(GLFWwindow* handle, int* width, int* height)
 {
     _GLFWwindow* window = (_GLFWwindow*) handle;
