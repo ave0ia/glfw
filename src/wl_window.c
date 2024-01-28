@@ -1310,6 +1310,14 @@ static void pointerHandleLeave(void* userData,
     _glfw.wl.pointerFocus = NULL;
     _glfw.wl.cursorPreviousName = NULL;
     _glfwInputCursorEnter(window, GLFW_FALSE);
+
+    // Would like to silently set mouse button state to undefined without triggering a mouse button release event
+    // See https://gitlab.freedesktop.org/wayland/wayland/-/issues/280
+    // But many underlying systems will keep their own state and only use GLFW events to keep it up to date
+    // So realistically, they NEED a mouse button event, even if wayland spec would like it to be implicitly undefined
+    for (int btn = 0; btn < GLFW_MOUSE_BUTTON_LAST+1; btn++)
+        if (window->mouseButtons[btn] != GLFW_RELEASE)
+            _glfwInputMouseClick(window, btn, GLFW_RELEASE, 0);
 }
 
 static void pointerHandleMotion(void* userData,
@@ -1659,6 +1667,14 @@ static void keyboardHandleLeave(void* userData,
     _glfw.wl.serial = serial;
     _glfw.wl.keyboardFocus = NULL;
     _glfwInputWindowFocus(window, GLFW_FALSE);
+
+    // Would like to silently set key state to undefined without triggering a key release event
+    // See https://gitlab.freedesktop.org/wayland/wayland/-/issues/280
+    // But many underlying systems will keep their own state and only use GLFW events to keep it up to date
+    // So realistically, they NEED a key event, even if wayland spec would like it to be implicitly undefined
+    for (int key = 0; key < GLFW_KEY_LAST+1; key++)
+        if (window->keys[key] != GLFW_RELEASE)
+            _glfwInputKey(window, key, _glfwGetKeyScancodeWayland(key), GLFW_RELEASE, 0);
 }
 
 static void keyboardHandleKey(void* userData,
@@ -2355,6 +2371,11 @@ void _glfwFocusWindowWayland(_GLFWwindow* window)
 {
     _glfwInputError(GLFW_FEATURE_UNAVAILABLE,
                     "Wayland: The platform does not support setting the input focus");
+}
+
+void _glfwDragWindowWayland(_GLFWwindow* window)
+{
+    xdg_toplevel_move(window->wl.xdg.toplevel, _glfw.wl.seat, _glfw.wl.serial);
 }
 
 void _glfwSetWindowMonitorWayland(_GLFWwindow* window,
