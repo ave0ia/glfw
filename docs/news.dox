@@ -9,6 +9,13 @@
 
 @subsection features_34 New features in version 3.4
 
+@subsection native_x11_visual_and_xcb_connection_34 X11 native Visual and XCB connection access
+
+GLFW now supports X11 platform specific native functions for accessing
+the X11 visual and XCB connection handle:
+@ref glfwGetX11Visual and @ref glfwGetXCBConnection.
+
+
 @subsubsection runtime_platform_34 Runtime platform selection
 
 GLFW now supports being compiled for multiple backends and selecting between
